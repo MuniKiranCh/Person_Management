@@ -9,5 +9,4 @@ const personSchema = new mongoose.Schema({
   mobile: { type: String, required: true, match: /^\d{10}$/, unique: true },
 });
 
-
 module.exports = mongoose.model("Person", personSchema);
