@@ -1,3 +1,4 @@
+const { number } = require("joi");
 const mongoose = require("mongoose");
 
 const personSchema = new mongoose.Schema({
@@ -7,5 +8,6 @@ const personSchema = new mongoose.Schema({
   gender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
   mobile: { type: String, required: true, match: /^\d{10}$/, unique: true },
 });
+
 
 module.exports = mongoose.model("Person", personSchema);
