@@ -36,6 +36,7 @@ router.post("/", validatePerson, async (req, res) => {
     if (err.code === 11000) {
       return res.status(400).json({ error: "Mobile number already exists" });
     }
+    console.log(err);
     res.status(500).json({ error: "Server error" });
   }
 });
